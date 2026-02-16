@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 27th Birthday Shiya 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffe6f2, #f3e6ff);
+    text-align: center;
+}
+
+/* LOCK SCREEN */
+#lockscreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#countdown {
+    font-size: 30px;
+    color: #cc0066;
+    margin-top: 20px;
+}
+
+/* MAIN CONTENT (Hidden Initially) */
+#mainContent {
+    display: none;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+    color: #ff3399;
+}
+
+.section {
+    padding: 70px 20px;
+}
+
+.card {
+    background: white;
+    margin: 15px auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lockscreen">
+    <h1>Hey Shiya</h1>
+    <h1>Something Special is on the way 💖</h1>
+    <p>Unlocks on 28 February at 12:00 AM 🎂</p>
+    <div id="countdown"></div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+<div class="section">
+    <h1>Happy 27th Birthday Shiya 💖</h1>
+    <div class="card">
+        My Shiya,<br><br>
+        On your 27th birthday, I just want you to know how deeply you are loved.
+        You are sweet, innocent, cute, and unbelievably beautiful.
+        Your voice calms me. Your accent melts me.
+        Thank you for being mine since 14 February. ❤️
+    </div>
+</div>
+
+<div class="section">
+    <h2>💞 Our Story</h2>
+    <div class="card">
+        It all started on 14th February…  
+        The day my life became brighter because of you.
+    </div>
+</div>
+
+<div class="section">
+    <h2>27 Reasons I Love You 💖</h2>
+    <div class="card">1. Your innocent heart</div>
+    <div class="card">2. Your cute smile</div>
+    <div class="card">3. Your beautiful accent</div>
+    <div class="card">... and 24 more reasons only you deserve to hear 🥰</div>
+</div>
+
+</div>
+
+<script>
+const unlockDate = new Date("Feb 28, 2026 00:00:00").getTime();
+
+const timer = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = unlockDate - now;
+
+    if (distance <= 0) {
+        clearInterval(timer);
+        document.getElementById("lockscreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+}, 1000);
+</script>
+
+</body>
+</html>
